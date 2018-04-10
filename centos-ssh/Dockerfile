@@ -8,6 +8,7 @@ rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
 rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
+RUN yum install epel-release -y
 RUN yum  install openssh-server -y;yum clean all;systemctl enable sshd
 RUN echo "centos" | passwd --stdin root
 RUN sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
