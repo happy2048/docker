@@ -1,4 +1,5 @@
 FROM centos:7.3.1611
+ENV VERSION 2.0
 ENV BaseUrl http://files.happy366.cn/files/docker/angelina2
 RUN yum install epel-release -y
 RUN yum install wget git -y
