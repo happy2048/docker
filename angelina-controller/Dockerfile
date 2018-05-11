@@ -11,5 +11,7 @@ RUN wget -c  $BaseUrl/bin/angelina-controller -O /usr/bin/angelina-controller  &
 	wget -c $BaseUrl/utils/angelina-runner-pod.yml -O /root/angelina-runner-pod.yml
 RUN chmod +x /usr/bin/angelina-controller && \
 	chmod +x /usr/bin/redis-cli && \
-	chmod +x /usr/bin/socket_client
+	chmod +x /usr/bin/socket_client && \
+	rm -rf /etc/localtime && \
+	ln -sv /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ENTRYPOINT ["angelina-controller"]
