@@ -4,6 +4,7 @@ ENV BaseUrl http://files.happy366.cn/files/docker/angelina2
 RUN apt-get update 
 RUN apt-get install wget git -y
 EXPOSE 6300
+ENV ANGELINA 2.0
 RUN wget -c  $BaseUrl/bin/angelina-controller -O /usr/bin/angelina-controller  && \
 	wget -c $BaseUrl/bin/angelina-runner   -O /root/angelina-runner && \
 	wget -c $BaseUrl/utils/redis-cli   -O /usr/bin/redis-cli  && \
