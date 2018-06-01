@@ -1,8 +1,8 @@
-FROM centos:7.3.1611
+FROM ubuntu:xenial 
 ENV VERSION 2.0
 ENV BaseUrl http://files.happy366.cn/files/docker/angelina2
-RUN yum install epel-release -y
-RUN yum install wget git -y
+RUN apt-get update 
+RUN apt-get install wget git -y
 EXPOSE 6300
 RUN wget -c  $BaseUrl/bin/angelina-controller -O /usr/bin/angelina-controller  && \
 	wget -c $BaseUrl/bin/angelina-runner   -O /root/angelina-runner && \
