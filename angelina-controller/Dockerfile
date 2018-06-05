@@ -4,6 +4,7 @@ ENV AngelinaUrl https://github.com/happy2048/angelina2.git
 RUN apt-get update 
 RUN apt-get install wget git tzdata -y
 EXPOSE 6300
+ENV version 2.3
 RUN cd /opt && \
 	git clone https://github.com/happy2048/angelina2.git && \
 	cd angelina2 && \
